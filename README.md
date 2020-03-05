@@ -7,11 +7,15 @@ Spring in Action 代码实践
 - [x] 依赖注入 Ioc
 - [x] 应用切面 Aop
 - [x] 使用模板消除样板式代码
-- [ ] 应用上下文
-- [ ] bean的生命周期
-- [ ] Spring模块
-- [ ] Spring的新功能
+- [x] 应用上下文
+- [x] bean的生命周期
+- [x] Spring模块
+- [x] Spring的新功能
 
+2. Chapter 02 装配Bean
+- [ ] 自动化装配bean
+- [ ] 通过Java代码装配bean
+- [ ] 通过XML装配bean
 
 ---
 
