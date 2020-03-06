@@ -13,7 +13,7 @@ Spring in Action 代码实践
 - [x] Spring的新功能
 
 2. Chapter 02 装配Bean
-- [ ] 自动化装配bean
+- [x] 自动化装配bean
 - [ ] 通过Java代码装配bean
 - [ ] 通过XML装配bean
 
