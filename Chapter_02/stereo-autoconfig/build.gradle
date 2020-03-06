@@ -1,0 +1,26 @@
+// 声明使用的插件
+plugins {
+    // id 'com.example.plugin', version '1.0'
+    id 'java'
+    id 'idea'
+}
+
+// 属性
+group 'com.bfx'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+// 添加仓库
+repositories {
+    mavenCentral()
+}
+
+// 添加依赖
+dependencies {
+    compile "org.springframework:spring-context:${springVersion}"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "com.github.stefanbirkner:system-rules:${systemRulesVersion}"
+}
