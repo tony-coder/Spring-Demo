@@ -15,7 +15,8 @@ Spring in Action 代码实践
 2. Chapter 02 装配Bean
 - [x] 自动化装配bean
 - [x] 通过Java代码装配bean
-- [ ] 通过XML装配bean
+- [x] 通过XML装配bean
+- [ ] 导入和混合配置
 
 ---
 
