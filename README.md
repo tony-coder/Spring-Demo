@@ -16,7 +16,9 @@ Spring in Action 代码实践
 - [x] 自动化装配bean
 - [x] 通过Java代码装配bean
 - [x] 通过XML装配bean
-- [ ] 导入和混合配置
+- [x] 导入和混合配置
+
+3. Chapter 03 高级装配
 
 ---
 
