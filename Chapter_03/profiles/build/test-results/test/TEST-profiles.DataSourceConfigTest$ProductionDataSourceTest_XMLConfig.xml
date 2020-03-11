@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="profiles.DataSourceConfigTest$ProductionDataSourceTest_XMLConfig" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-11T08:10:40" hostname="LAPTOP-NHJBFJ17" time="0.007">
+  <properties/>
+  <testcase name="shouldBeEmbeddedDatasource" classname="profiles.DataSourceConfigTest$ProductionDataSourceTest_XMLConfig" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[三月 11, 2020 4:10:40 下午 org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+信息: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+三月 11, 2020 4:10:40 下午 org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+信息: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7b6c2d0b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@232f967, org.springframework.test.context.support.DirtiesContextTestExecutionListener@35f86044, org.springframework.test.context.transaction.TransactionalTestExecutionListener@757517c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1dc930e8, org.springframework.test.context.event.EventPublishingTestExecutionListener@8250bf7]
+]]></system-err>
+</testsuite>
