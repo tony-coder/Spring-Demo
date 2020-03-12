@@ -20,7 +20,7 @@ Spring in Action 代码实践
 
 3. Chapter 03 高级装配
 - [x] Spring profile
-- [ ] 条件化的bean声明
+- [x] 条件化的bean声明
 - [ ] 自动装配与歧义性
 - [ ] bean的作用域
 - [ ] Spring表达式语言
