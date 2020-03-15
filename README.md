@@ -23,7 +23,9 @@ Spring in Action 代码实践
 - [x] 条件化的bean声明
 - [x] 自动装配与歧义性
 - [x] bean的作用域
-- [ ] Spring表达式语言
+- [ ] 运行时值注入
+	- [x] 注入外部的值
+	- [ ] Spring表达式语言
 
 ---
 
