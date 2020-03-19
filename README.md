@@ -27,6 +27,11 @@ Spring in Action 代码实践
 	- [x] 注入外部的值
 	- [ ] Spring表达式语言
 
+4. Chapter 04 面向切面的Spring
+- [ ] 使用注解创建切面
+- [ ] 在XML中声明切面
+- [ ] 注入AspectJ切面
+
 ---
 
 ![批注 2020-03-04 170028.png](https://i.loli.net/2020/03/04/atpRZqm3MYBwHGe.png)
