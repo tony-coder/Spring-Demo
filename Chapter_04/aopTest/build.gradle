@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'com.bfx'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-context:${springVersion}"
+
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+    compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.5'
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+    
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "com.github.stefanbirkner:system-rules:${systemRulesVersion}"
+}
