@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean name="play" class="com.concert.Player"/>
+
+    <bean name="audience" class="com.concert.Audience"/>
+
+    <!-- 大多数的AOP配置元素必须在<aop:config>元素的上下文内使用 -->
+    <aop:config>
+        <aop:aspect ref="audience">  <!-- 引用 audience Bean -->
+
+            <!-- 使用<aop:pointcut>定义命名切点 -->
+            <aop:pointcut id="performance" expression="execution(* com.concert.Performance.perform(..))"/>
+
+            <!-- 声明环绕通知 -->
+            <aop:around pointcut-ref="performance" method="watchPerformance"/>
+
+            <!-- 表演之前 -->
+            <!--<aop:before pointcut="execution(* *.concert.Performance.perform(..))" method="silenceCellPhones"/>
+            <aop:before pointcut="execution(* com.concert.Performance.perform(..))" method="takeSeats"/>-->
+
+            <!-- 引用切点 -->
+            <aop:before pointcut-ref="performance" method="silenceCellPhones"/>
+            <aop:before pointcut-ref="performance" method="takeSeats"/>
+
+            <!-- 表演之后 -->
+            <!--<aop:after pointcut="execution(* com.concert.Performance.perform(..))" method="applause"/>-->
+            <aop:after pointcut-ref="performance" method="applause"/>
+
+            <!-- 表演失败之后 -->
+            <!--<aop:after-throwing pointcut="execution(* *.com.concert.Performance.perform(..))" method="demandRefund"/>-->
+            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

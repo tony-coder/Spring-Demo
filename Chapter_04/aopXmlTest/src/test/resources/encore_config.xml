@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="encoreableDelegate" class="com.concert.DefaultEncoreable"/>
+
+    <bean id="play" class="com.concert.Player"/>
+
+    <aop:config>
+        <!--
+             types-matching 指定类型匹配接口
+             implement-interface 指定那些bean在父类结构中会增加的接口
+             这里有两种方式标识所引入接口的实现：default-impl属性使用全限定类名来显示指定Encoreable的实现
+             delegate-ref属性引用了一个Spring bean作为引入的委托
+         -->
+        <aop:aspect>
+            <aop:declare-parents types-matching="com.concert.Performance+" implement-interface="com.concert.Encoreable"
+                                 delegate-ref="encoreableDelegate"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
