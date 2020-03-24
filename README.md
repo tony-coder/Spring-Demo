@@ -30,7 +30,8 @@ Spring in Action 代码实践
 4. Chapter 04 面向切面的Spring
 - [x] 使用注解创建切面
 - [x] 在XML中声明切面
-- [ ] 注入AspectJ切面
+- [x] 注入AspectJ切面
+
 
 ---
 
