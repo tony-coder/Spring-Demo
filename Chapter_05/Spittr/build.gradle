@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.bfx'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-jdbc:$springVersion"
+    compile "com.h2database:h2:$h2Version"
+    compile "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+
+    compile "javax.servlet:jstl:$jstlVersion"
+    providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
+    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
+    providedCompile "javax.el:javax.el-api:$jspElVersion"
+    
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "org.springframework:spring-test:$springVersion"
+    /* The open source Mockito framework makes it easy to unit test Java applications */
+    testCompile "org.mockito:mockito-core:$mockitoVersion"
+    testCompile "org.hamcrest:hamcrest-library:$hamcrestVersion"
+    
+}
