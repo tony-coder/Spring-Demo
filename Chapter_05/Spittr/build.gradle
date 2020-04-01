@@ -21,7 +21,7 @@ dependencies {
 
     compile "javax.servlet:jstl:$jstlVersion"
     providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
-//    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
+    // providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
     // https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api
     providedCompile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
 
