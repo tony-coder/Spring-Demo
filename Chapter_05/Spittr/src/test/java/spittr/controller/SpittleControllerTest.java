@@ -35,6 +35,7 @@ public class SpittleControllerTest {
         // 首先创建SpittleRepository接口的mock实现
         SpittleRepository mockRepository = mock(SpittleRepository.class);  // Mock Repository
         // 这个实现会从它的findSpittles()方法中返回20个Spittle对象
+        // when(xxxx).thenReturn(yyyy); 是指定当执行了这个方法的时候，返回 thenReturn 的值，相当于是对模拟对象的配置过程，为某些条件给定一个预期的返回值
         when(mockRepository.findSpittles(Long.MAX_VALUE, 20))
                 .thenReturn(expectedSpittles);
         // 然后，它将这个mockRepository注入到一个新的SpittleController实例中
@@ -50,5 +51,45 @@ public class SpittleControllerTest {
                 .andExpect(view().name("spittles"))  // 断言视图名称为spittles
                 .andExpect(model().attributeExists("spittleList"))  // 断言模型中包含名为spittleList的属性
                 .andExpect(model().attribute("spittleList", hasItems(expectedSpittles.toArray())));  // 断言期望的值 在spittleList中包含预期的内容
+    }
+
+    @Test
+    public void shouldShowPagedSpittles() throws Exception {
+        List<Spittle> expectedSpittles = createSpittleList(50);
+        SpittleRepository mockRepository = mock(SpittleRepository.class);
+        when(mockRepository.findSpittles(238900, 50))  // 预期的max和count参数
+                .thenReturn(expectedSpittles);
+        SpittleController controller = new SpittleController(mockRepository);
+        MockMvc mockMvc = standaloneSetup(controller)
+                .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
+                .build();
+        mockMvc.perform(get("/spittles?max=238900&count=50"))  // 传入max和count参数
+                .andExpect(view().name("spittles"))
+                .andExpect(model().attributeExists("spittleList"))
+                .andExpect(model().attribute("spittleList",
+                        hasItems(expectedSpittles.toArray())));
+    }
+
+    /**
+     * 测试对某个Spittle的请求，其中ID要在路径变量中指定
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testSpittle() throws Exception {
+        Spittle expectedSpittle = new Spittle("Hello", new Date());
+        SpittleRepository mockRepositpry = mock(SpittleRepository.class);
+        // 当执行到.findOne(12345)方法时，返回expectedSpittle
+        when(mockRepositpry.findOne((long) 12345)).thenReturn(expectedSpittle);
+
+        SpittleController controller = new SpittleController(mockRepositpry);
+        MockMvc mockMvc = standaloneSetup(controller).build();
+
+        // 通过路径请求资源
+        mockMvc.perform(get("/spittles/12345"))
+                .andExpect(view().name("spittle"))
+                .andExpect(model().attributeExists("spittle"))
+                .andExpect(model().attribute("spittle", expectedSpittle));
+
     }
 }

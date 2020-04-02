@@ -30,8 +30,16 @@ public class JdbcSpittleRepository implements SpittleRepository {
         );
     }
 
-    private static class SpittleRowMapper implements RowMapper<Spittle> {
+    public Spittle findOne(Long id) {
+        return jdbc.queryForObject(
+                "select id, message, created_at, latitude, longitude" +
+                        " from Spittle" +
+                        " where id = ?",
+                new SpittleRowMapper(), id
+        );
+    }
 
+    private static class SpittleRowMapper implements RowMapper<Spittle> {
         @Override
         public Spittle mapRow(ResultSet rs, int rowNum) throws SQLException {
             return new Spittle(
